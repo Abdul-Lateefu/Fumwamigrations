@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 10;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #3f51b5;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 5px 15px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #5c6bc0;
+        }
+
+        #services {
+            padding: 100px 50px 50px;
+            text-align: center;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .services-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            text-align: center;
+            max-width: 300px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .service i {
+            font-size: 50px;
+            color: #3f51b5;
+            margin-bottom: 15px;
+        }
+
+        .cta-button {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3f51b5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #5c6bc0;
+        }
+
+        .testimonials {
+            padding: 50px;
+            background: #e0f7fa;
+            text-align: center;
+        }
+
+        .testimonials h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            scroll-snap-type: x mandatory;
+        }
+
+        .carousel .testimonial {
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            max-width: 300px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 1rem;
+            color: #555;
+        }
+
+        footer {
+            background: #3f51b5;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #e0f7fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<nav>
+    <a href="#services">Services</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="services" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <div class="services-container">
+        <div class="service" data-aos="zoom-in">
+            <i class="fas fa-briefcase"></i>
+            <h3>Work Visa Assistance</h3>
+            <p>Secure your dream job overseas with our expert visa support.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+        <div class="service" data-aos="zoom-in" data-aos-delay="100">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>Study Abroad Consultancy</h3>
+            <p>Get admission to prestigious universities worldwide.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+        <div class="service" data-aos="zoom-in" data-aos-delay="200">
+            <i class="fas fa-plane"></i>
+            <h3>Migration Planning</h3>
+            <p>Comprehensive migration solutions tailored to your needs.</p>
+            <a href="#" class="cta-button">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials" id="testimonials" data-aos="fade-up">
+    <h3>What Our Clients Say</h3>
+    <div class="carousel">
+        <div class="testimonial">"Thanks to their visa assistance, I landed my dream job abroad!" - John D.</div>
+        <div class="testimonial">"The team guided me through the entire process of studying overseas. Highly recommended!" - Sarah L.</div>
+        <div class="testimonial">"Excellent service and support. They made migration hassle-free." - Mike T.</div>
+    </div>
+</section>
+<div class="contact-info">
+        <h3>Contact Us</h3>
+        <p><strong>Phone:</strong> +256745785366</p>
+        <p><strong>Phone:</strong> +2567200911519</p>
+        <p><strong>Phone:</strong> +256787494803</p>
+        <p><strong>Email:</strong> info@fumwaadministration@gmail.com</p>
+    </div>
+</section>
+
+<footer id="contact">
+    <p>&copy; 2024 Fumwa Migration. <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+
+<script>
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: ['#3f51b5', '#00c6ff', '#0072ff'] },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5 },
+            size: { value: 4, random: true },
+            line_linked: { enable: true, color: '#3f51b5', opacity: 0.4 },
+            move: { enable: true, speed: 3 }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: { onhover: { enable: true, mode: 'grab' } },
+            modes: { grab: { distance: 200, line_linked: { opacity: 0.6 } } }
+        },
+        retina_detect: true
+    });
+
+    AOS.init({ duration: 1000 });
+</script>
+
+</body>
+</html>

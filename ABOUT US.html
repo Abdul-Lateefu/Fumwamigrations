@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <!-- AOS Library for animations -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ff6f61;
+        }
+
+        #about, #article {
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 80px;
+            max-width: 800px;
+            margin: 80px auto 40px;
+            background: linear-gradient(135deg, #6e7f00, #ffdd61);
+            border-radius: 8px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h2, #article h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        #about p, #article p {
+            font-size: 1.2rem;
+            color: #fff;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            opacity: 0.85;
+        }
+
+        #about button, #article button {
+            padding: 10px 20px;
+            background-color: #ff6f61;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #about button:hover, #article button:hover {
+            background-color: #d65a4f;
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .hidden-content.active {
+            display: block;
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#article">Article</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up">
+        <h2>About Us</h2>
+        <p>We are committed to helping individuals achieve their dreams overseas. Our mission is to provide expert guidance, create opportunities, and help you make your vision a reality in a global environment.</p>
+        <button onclick="toggleContent('about-content')">Learn More</button>
+        <div id="about-content" class="hidden-content">
+            <p>Our team of professionals specializes in providing accurate and up-to-date information about migration procedures, educational opportunities abroad, and visa applications. We aim to empower our clients with the knowledge and resources to make informed decisions about their future.</p>
+            <p>We believe in fostering global connections and bridging cultural gaps. By choosing us, you are taking the first step towards a brighter future full of opportunities and success stories.</p>
+        </div>
+    </section>
+
+    <!-- Article Section -->
+    <section id="article" data-aos="fade-up">
+        <h2>Article</h2>
+        <p>The name of the entity is FUMWA, which stands for the Federation of Uganda Migrant Workers' Associations.</p>
+        <button onclick="toggleContent('article-content')">Learn More</button>
+        <div id="article-content" class="hidden-content">
+            <p>FUMWA is a dedicated organization that supports migrant workers from Uganda in achieving their goals abroad. We work tirelessly to ensure their rights are protected and their contributions are recognized.</p>
+            <p>Through partnerships and advocacy, we aim to create a sustainable system that promotes the welfare of migrant workers while fostering international cooperation and mutual growth.</p>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

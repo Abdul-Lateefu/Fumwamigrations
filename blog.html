@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our latest blogs and migration tips.">
+    <title>FUMWA Blog</title>
+
+    <!-- External Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+
+    <style>
+        /* General Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #f4f4f4;
+            background: #121212;
+            overflow-x: hidden;
+        }
+
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #ffcc00;
+            margin-top: 20px;
+        }
+
+        /* Blog Section */
+        #blog {
+            padding: 50px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #blog .carousel {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .blog-post {
+            max-width: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6), -10px -10px 30px rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.05);
+        }
+
+        .blog-post img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .blog-post h3 {
+            margin: 15px 0;
+            color: #ffcc00;
+        }
+
+        .blog-post p {
+            color: #ddd;
+        }
+
+        .blog-post a {
+            text-decoration: none;
+            color: #3f51b5;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%;
+            max-width: 500px;
+            background: #222;
+            border-radius: 15px;
+            padding: 20px;
+            color: #ddd;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .modal h3 {
+            color: #ffcc00;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            color: #fff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+        }
+
+        /* Contact Section */
+        footer {
+            text-align: center;
+            padding: 30px;
+            background: #1c1c1c;
+            color: #f4f4f4;
+            margin-top: 50px;
+            box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        footer .contacts {
+            margin-top: 20px;
+        }
+
+        footer .contacts a {
+            color: #ffcc00;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Our Blog</h2>
+        <p style="text-align: center; max-width: 800px; margin: auto; color: #ddd;">
+            Stay updated with the latest tips, stories, and news about migration opportunities worldwide.
+        </p>
+        <div class="carousel">
+            <div class="blog-post">
+                <img src="b.jpg" alt="Top 5 Countries">
+                <h3>Top 5 Countries for Migration in 2024</h3>
+                <p>Discover the best countries for work and study opportunities this year.</p>
+                <a class="read-more" data-target="modal1">Read More</a>
+            </div>
+            <div class="blog-post">
+                <img src="c.jpg" alt="Success Story">
+                <h3>Success Story: From Uganda to Harvard</h3>
+                <p>Read about Mighty Ghost's journey to a top-tier university.</p>
+                <a class="read-more" data-target="modal2">Read More</a>
+            </div>
+            <div class="blog-post">
+                <img src="a.jpg" alt="Visa Tips">
+                <h3>Visa Tips: Common Mistakes to Avoid</h3>
+                <p>Learn the do's and don'ts of applying for a visa.</p>
+                <a class="read-more" data-target="modal3">Read More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <span class="modal-close">&times;</span>
+        <h3>Top 5 Countries for Migration in 2024</h3>
+        <p>In 2024, the top destinations for migration include Canada, Germany, Australia, the United States, and New Zealand. These countries offer excellent opportunities for career growth, education, and quality of life. Learn more about visa requirements and the application process to make your transition smooth.</p>
+        <p>With robust economies and welcoming cultures, these nations provide the perfect environment for migrants to thrive. Explore options and choose the best fit for your aspirations.</p>
+    </div>
+
+    <div id="modal2" class="modal">
+        <span class="modal-close">&times;</span>
+        <h3>Success Story: From Uganda to Harvard</h3>
+        <p>Mighty Ghost's inspiring story shows how determination and hard work can lead to incredible achievements. Growing up in Uganda, he faced numerous challenges but never gave up on his dreams.</p>
+        <p>With the support of scholarships and mentorship programs, Mighty secured admission to Harvard University, where he is excelling in his studies. His journey is a testament to the power of resilience and opportunity.</p>
+    </div>
+
+    <div id="modal3" class="modal">
+        <span class="modal-close">&times;</span>
+        <h3>Visa Tips: Common Mistakes to Avoid</h3>
+        <p>Visa applications can be complex, but avoiding common mistakes like incomplete forms or missing documents can greatly increase your chances of approval.</p>
+        <p>Understand the specific requirements for your target country, and ensure your application is submitted well before the deadline. Preparation is key to a successful visa process.</p>
+    </div>
+
+    <!-- Modal Overlay -->
+    <div class="modal-overlay"></div>
+
+    <!-- Contact Section -->
+    <footer>
+        <h3>Contact Us</h3>
+        <div class="contacts">
+            <a href="tel:+256745785366">+256745785366</a>
+            <a href="tel:+2567200911519">+2567200911519</a>
+            <a href="tel:+2568749803">+2568749803</a>
+            <a href="mailto:Fumwaadministration@gmail.com">Fumwaadministration@gmail.com</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        particlesJS.load('particles-js', {
+            "particles": {
+                "number": {"value": 80},
+                "size": {"value": 3},
+                "color": {"value": "#ffffff"}
+            },
+            "interactivity": {
+                "events": {"onhover": {"enable": true, "mode": "repulse"}}
+            }
+        });
+
+        document.querySelectorAll('.read-more').forEach(link => {
+            link.addEventListener('click', () => {
+                const target = link.dataset.target;
+                document.getElementById(target).style.display = 'block';
+                document.querySelector('.modal-overlay').style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.modal-close, .modal-overlay').forEach(el => {
+            el.addEventListener('click', () => {
+                document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
+                document.querySelector('.modal-overlay').style.display = 'none';
+            });
+        });
+    </script>
+</body>
+</html>
